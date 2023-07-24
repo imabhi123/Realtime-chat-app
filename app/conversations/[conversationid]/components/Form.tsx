@@ -15,8 +15,7 @@ import { CldUploadButton } from "next-cloudinary";
 import useConversation from "@/app/hooks/useConversation";
 
 const Form = () => {
-  const { conversationId } = useConversation();
-
+  const { conversationid } = useConversation();
   const {
     register,
     handleSubmit,
@@ -34,14 +33,14 @@ const Form = () => {
     setValue('message', '', { shouldValidate: true });
     axios.post('/api/messages', {
       ...data,
-      conversationId: conversationId
+      conversationid: conversationid
     })
   }
 
   const handleUpload = (result: any) => {
     axios.post('/api/messages', {
       image: result.info.secure_url,
-      conversationId: conversationId
+      conversationid: conversationid
     })
   }
 

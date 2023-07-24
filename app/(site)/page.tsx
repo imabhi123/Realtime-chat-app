@@ -36,7 +36,7 @@ const Auth = () => {
             Sign in to your account
         </h2>
       </div>
-      <AuthForm />      
+      <AuthForm />
   </div>
   )
 }

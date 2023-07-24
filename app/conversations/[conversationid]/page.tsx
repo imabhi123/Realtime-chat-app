@@ -5,15 +5,14 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import Form from "./components/Form";
 import EmptyState from "@/app/components/EmptyState";
-
 interface IParams {
-  conversationId: string;
+  conversationid: string;
 }
 
 const ChatId = async ({ params }: { params: IParams }) => {
-  const conversation = await getConversationById(params.conversationId);
-  const messages = await getMessages(params.conversationId);
-
+  console.log(params,'fhgkhgkhjgjkhgkjhgkjhg')
+  const conversation = await getConversationById(params.conversationid);
+  const messages = await getMessages(params.conversationid);
   if (!conversation) {
     return (
       <div className="lg:pl-80 h-full">

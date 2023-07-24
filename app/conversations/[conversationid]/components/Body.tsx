@@ -14,21 +14,21 @@ interface BodyProps {
 }
 
 const Body: React.FC<BodyProps> = ({ initialMessages = [] }) => {
+  
   const bottomRef = useRef<HTMLDivElement>(null);
   const [messages, setMessages] = useState(initialMessages);
   
-  const { conversationId } = useConversation();
+  const { conversationid } = useConversation();
+  useEffect(() => {
+    axios.post(`/api/conversations/${conversationid}/seen`);
+  }, [conversationid]);
 
   useEffect(() => {
-    axios.post(`/api/conversations/${conversationId}/seen`);
-  }, [conversationId]);
-
-  useEffect(() => {
-    pusherClient.subscribe(conversationId)
+    pusherClient.subscribe(conversationid)
     bottomRef?.current?.scrollIntoView();
 
     const messageHandler = (message: FullMessageType) => {
-      axios.post(`/api/conversations/${conversationId}/seen`);
+      axios.post(`/api/conversations/${conversationid}/seen`);
 
       setMessages((current) => {
         if (find(current, { id: message.id })) {
@@ -56,11 +56,11 @@ const Body: React.FC<BodyProps> = ({ initialMessages = [] }) => {
     pusherClient.bind('message:update', updateMessageHandler);
 
     return () => {
-      pusherClient.unsubscribe(conversationId)
+      pusherClient.unsubscribe(conversationid)
       pusherClient.unbind('messages:new', messageHandler)
       pusherClient.unbind('message:update', updateMessageHandler)
     }
-  }, [conversationId]);
+  }, [conversationid]);
 
   return ( 
     <div className="flex-1 overflow-y-auto">

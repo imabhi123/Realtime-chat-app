@@ -15,14 +15,14 @@ const getConversationById = async (
       where: {
         id: conversationId
       },
-      include: {
+      include: { 
         users: true,
       },
     });
 
     return conversation;
   } catch (error: any) {
-    console.log(error, 'SERVER_ERROR')
+    console.log(error, 'SERVER_ERROR',error.message)
     return null;
   }
 };
