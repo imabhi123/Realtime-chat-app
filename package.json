@@ -23,7 +23,11 @@
     "date-fns": "^2.30.0",
     "lodash": "^4.17.21",
     "next": "13.4.7",
+<<<<<<< HEAD
     "next-auth": "^4.22.3",
+=======
+    "next-auth": "^4.22.1",
+>>>>>>> 867ff84e7efde6625a2791d8014b1535aeba7073
     "next-cloudinary": "^4.13.1",
     "next-superjson-plugin": "^0.5.8",
     "postcss": "8.4.24",

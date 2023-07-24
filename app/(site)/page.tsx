@@ -20,7 +20,11 @@ const Auth = () => {
           height="48"
           width="48"
           className="mx-auto w-auto"
+<<<<<<< HEAD
           src="/images/logoo.png"
+=======
+          src="/images/logo.png"
+>>>>>>> 867ff84e7efde6625a2791d8014b1535aeba7073
           alt="Logo"
         />
         <h2 
@@ -36,7 +40,11 @@ const Auth = () => {
             Sign in to your account
         </h2>
       </div>
+<<<<<<< HEAD
       <AuthForm />
+=======
+      <AuthForm />      
+>>>>>>> 867ff84e7efde6625a2791d8014b1535aeba7073
   </div>
   )
 }
