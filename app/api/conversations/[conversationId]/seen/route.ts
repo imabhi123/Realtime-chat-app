@@ -17,20 +17,12 @@ export async function POST(
     const {
       conversationId
     } = params;
-<<<<<<< HEAD
     
-=======
-
->>>>>>> 867ff84e7efde6625a2791d8014b1535aeba7073
     
     if (!currentUser?.id || !currentUser?.email) {
       return new NextResponse('Unauthorized', { status: 401 });
     }
-<<<<<<< HEAD
     
-=======
-
->>>>>>> 867ff84e7efde6625a2791d8014b1535aeba7073
     // Find existing conversation
     const conversation = await prisma.conversation.findUnique({
       where: {
@@ -49,11 +41,7 @@ export async function POST(
     if (!conversation) {
       return new NextResponse('Invalid ID', { status: 400 });
     }
-<<<<<<< HEAD
     
-=======
-
->>>>>>> 867ff84e7efde6625a2791d8014b1535aeba7073
     // Find last message
     const lastMessage = conversation.messages[conversation.messages.length - 1];
 
@@ -78,21 +66,13 @@ export async function POST(
         }
       }
     });
-<<<<<<< HEAD
     
-=======
-
->>>>>>> 867ff84e7efde6625a2791d8014b1535aeba7073
     // Update all connections with new seen
     await pusherServer.trigger(currentUser.email, 'conversation:update', {
       id: conversationId,
       messages: [updatedMessage]
     });
-<<<<<<< HEAD
     console.log(params,'akkfk')
-=======
-
->>>>>>> 867ff84e7efde6625a2791d8014b1535aeba7073
     // If user has already seen the message, no need to go further
     if (lastMessage.seenIds.indexOf(currentUser.id) !== -1) {
       return NextResponse.json(conversation);

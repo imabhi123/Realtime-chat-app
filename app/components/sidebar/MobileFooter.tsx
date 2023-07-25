@@ -11,11 +11,7 @@ const MobileFooter = () => {
   if (isOpen) {
     return null;
   }
-<<<<<<< HEAD
  
-=======
-
->>>>>>> 867ff84e7efde6625a2791d8014b1535aeba7073
   return ( 
     <div 
       className="
@@ -33,15 +29,9 @@ const MobileFooter = () => {
     >
       {routes.map((route) => (
         <MobileItem 
-<<<<<<< HEAD
           key={route.href}
           href={route.href}
           active={route.active}
-=======
-          key={route.href} 
-          href={route.href} 
-          active={route.active} 
->>>>>>> 867ff84e7efde6625a2791d8014b1535aeba7073
           icon={route.icon}
           onClick={route.onClick}
         />

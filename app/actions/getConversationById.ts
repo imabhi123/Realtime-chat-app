@@ -15,22 +15,14 @@ const getConversationById = async (
       where: {
         id: conversationId
       },
-<<<<<<< HEAD
       include: { 
-=======
-      include: {
->>>>>>> 867ff84e7efde6625a2791d8014b1535aeba7073
         users: true,
       },
     });
 
     return conversation;
   } catch (error: any) {
-<<<<<<< HEAD
     console.log(error, 'SERVER_ERROR',error.message)
-=======
-    console.log(error, 'SERVER_ERROR')
->>>>>>> 867ff84e7efde6625a2791d8014b1535aeba7073
     return null;
   }
 };

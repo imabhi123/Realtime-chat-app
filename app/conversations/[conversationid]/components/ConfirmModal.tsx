@@ -20,13 +20,13 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
   onClose 
 }) => {
   const router = useRouter();
-  const { conversationId } = useConversation();
+  const { conversationid } = useConversation();
   const [isLoading, setIsLoading] = useState(false);
   
   const onDelete = useCallback(() => {
     setIsLoading(true);
 
-    axios.delete(`/api/conversations/${conversationId}`)
+    axios.delete(`/api/conversations/${conversationid}`)
     .then(() => {
       onClose();
       router.push('/conversations');
@@ -34,7 +34,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
     })
     .catch(() => toast.error('Something went wrong!'))
     .finally(() => setIsLoading(false))
-  }, [router, conversationId, onClose]);
+  }, [router, conversationid, onClose]);
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>

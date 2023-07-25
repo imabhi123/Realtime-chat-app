@@ -30,7 +30,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
   const router = useRouter();
   const session = useSession();
 
-  const { conversationId, isOpen } = useConversation();
+  const { conversationid, isOpen } = useConversation();
 
   const pusherKey = useMemo(() => {
     return session.data?.user?.email
@@ -120,7 +120,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
             <ConversationBox
               key={item.id}
               data={item}
-              selected={conversationId === item.id}
+              selected={conversationid === item.id}
             />
           ))}
         </div>
