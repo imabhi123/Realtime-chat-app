@@ -72,7 +72,6 @@ export async function POST(
       id: conversationId,
       messages: [updatedMessage]
     });
-    console.log(params,'akkfk')
     // If user has already seen the message, no need to go further
     if (lastMessage.seenIds.indexOf(currentUser.id) !== -1) {
       return NextResponse.json(conversation);
